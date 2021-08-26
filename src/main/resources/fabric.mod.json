@@ -24,12 +24,13 @@
             "alpvax.mc.goprone.GoProne"
         ]
     },
+    "accessWidener": "goprone.accesswidener",
     "mixins": [
         "goprone.mixins.json"
     ],
     "depends": {
         "fabricloader": ">=0.7.4",
         "fabric": "*",
-        "minecraft": "1.17.x"
+        "minecraft": "1.16.x"
     }
 }

@@ -1,23 +1,30 @@
 plugins {
-	id 'fabric-loom' version '0.9.+'
+	id 'fabric-loom' version '0.7-SNAPSHOT'
 }
 
-sourceCompatibility = JavaVersion.VERSION_16
-targetCompatibility = JavaVersion.VERSION_16
+sourceCompatibility = JavaVersion.VERSION_1_8
+targetCompatibility = JavaVersion.VERSION_1_8
 
-archivesBaseName = "GoProne-Fabric-1.17.1"
+archivesBaseName = "GoProne-Fabric-1.16.5"
 version = System.getProperty("goprone.version", "unknown")
 
 dependencies {
-	minecraft "com.mojang:minecraft:1.17.1"
-	mappings "net.fabricmc:yarn:1.17.1+build.43"
+	minecraft "com.mojang:minecraft:1.16.5"
+	mappings "net.fabricmc:yarn:1.16.5+build.10:v2"
 	modImplementation "net.fabricmc:fabric-loader:0.11.6"
-	modImplementation "net.fabricmc.fabric-api:fabric-api:0.39.1+1.17"
+	modImplementation "net.fabricmc.fabric-api:fabric-api:0.39.1+1.16"
 }
 
 tasks.withType(JavaCompile).configureEach {
 	it.options.encoding = "UTF-8"
-    it.options.release = 16
+	def targetVersion = 8
+	if (JavaVersion.current().isJava9Compatible()) {
+		 it.options.release = targetVersion
+	}
+}
+
+loom {
+    accessWidener = file("src/main/resources/goprone.accesswidener")
 }
 
 processResources {
