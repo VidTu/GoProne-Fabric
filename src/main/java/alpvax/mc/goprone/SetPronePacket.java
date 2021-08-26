@@ -1,7 +1,7 @@
 package alpvax.mc.goprone;
 
-import net.minecraft.network.PacketByteBuf;
 import net.minecraft.server.network.ServerPlayerEntity;
+import net.minecraft.util.PacketByteBuf;
 
 /**
  * Set prone packet.

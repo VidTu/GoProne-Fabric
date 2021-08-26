@@ -41,7 +41,7 @@ public class GoProne implements ModInitializer {
 	}
 
 	public static void onPlayerJump(PlayerEntity player) {
-		if (player.isOnGround() && player.getPose() == EntityPose.SWIMMING && !Config.isJumpingAllowed) {
+		if (player.onGround && player.getPose() == EntityPose.SWIMMING && !Config.isJumpingAllowed) {
 			Vec3d motion = player.getVelocity();
 			player.setVelocity(motion.add(0, -motion.y, 0)); // set y motion to 0
 		}
