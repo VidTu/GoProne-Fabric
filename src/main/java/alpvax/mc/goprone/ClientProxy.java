@@ -4,7 +4,7 @@ import net.fabricmc.api.ClientModInitializer;
 import net.fabricmc.fabric.api.client.event.lifecycle.v1.ClientTickEvents;
 import net.fabricmc.fabric.api.client.keybinding.v1.KeyBindingHelper;
 import net.minecraft.client.MinecraftClient;
-import net.minecraft.client.option.KeyBinding;
+import net.minecraft.client.options.KeyBinding;
 import net.minecraft.client.util.InputUtil;
 import net.minecraft.client.util.InputUtil.Type;
 import net.minecraft.entity.player.PlayerEntity;
@@ -19,7 +19,7 @@ import java.util.UUID;
  */
 public class ClientProxy implements ClientModInitializer {
 	public static final KeyBinding prone = new KeyBinding("key.prone", Type.KEYSYM, GLFW.GLFW_KEY_C, "key.categories.movement");
-	public static final KeyBinding toggleProne = new KeyBinding("key.prone.toggle", InputUtil.UNKNOWN_KEY.getCode(), "key.categories.movement");
+	public static final KeyBinding toggleProne = new KeyBinding("key.prone.toggle", InputUtil.UNKNOWN_KEYCODE.getKeyCode(), "key.categories.movement");
 
 	private static boolean previousPressed = false;
 	private static boolean proneToggle = false;

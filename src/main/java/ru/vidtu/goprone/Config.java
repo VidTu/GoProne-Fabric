@@ -56,7 +56,7 @@ public class Config {
 	 * @return <code>true</code> if player can go prone, <code>false</code> otherwise
 	 */
 	public static boolean test(PlayerEntity pe) {
-		if (!flying && !pe.isOnGround()) return false;
+		if (!flying && !pe.onGround) return false;
 		if (pe.hasVehicle()) {
 			if (riding) {
 				return !ridingException.contains(EntityType.getId(pe.getVehicle().getType()).toString());
